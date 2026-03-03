@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.shape.*?>
+
+<HBox xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.messaging.client.controllers.ChatController"
+      stylesheets="@../styles/app.css"
+      styleClass="main-container"
+      prefWidth="950" prefHeight="680">
+
+    <!-- ===== SIDEBAR GAUCHE ===== -->
+    <VBox styleClass="sidebar" spacing="0">
+
+        <!-- Header sidebar -->
+        <VBox styleClass="sidebar-header" spacing="4">
+            <HBox alignment="CENTER_LEFT" spacing="10">
+                <Label text="💬" style="-fx-font-size:22px;"/>
+                <VBox>
+                    <Label text="AssociaChat" styleClass="sidebar-title"/>
+                    <Label text="Association" styleClass="sidebar-subtitle"/>
+                </VBox>
+            </HBox>
+            <!-- Info utilisateur connecté -->
+            <HBox alignment="CENTER_LEFT" spacing="8"
+                  style="-fx-background-color:rgba(108,99,255,0.15); -fx-background-radius:10; -fx-padding:8 12 8 12;">
+                <Circle fx:id="myStatusDot" radius="5" styleClass="status-dot-online"/>
+                <Label fx:id="myUsernameLabel" text="Utilisateur" styleClass="user-own-name"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="myRoleBadge" text="MEMBRE" styleClass="badge-membre"/>
+            </HBox>
+        </VBox>
+
+        <!-- Section membres en ligne -->
+        <Label text="EN LIGNE" styleClass="section-label"/>
+
+        <!-- Liste membres -->
+        <ListView fx:id="membersList"
+                  styleClass="members-list"
+                  VBox.vgrow="ALWAYS"/>
+
+        <!-- Bouton déconnexion -->
+        <VBox style="-fx-padding:10 15 15 15;" spacing="8">
+            <Button fx:id="btnAllMembers"
+                    text="👥  Tous les membres"
+                    onAction="#handleGetAllMembers"
+                    styleClass="btn-secondary"
+                    maxWidth="Infinity"
+                    visible="false"
+                    managed="false"/>
+            <Button text="⏻  Se déconnecter"
+                    onAction="#handleLogout"
+                    styleClass="btn-secondary"
+                    maxWidth="Infinity"/>
+        </VBox>
+
+    </VBox>
+
+    <!-- ===== ZONE CHAT DROITE ===== -->
+    <VBox VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS" styleClass="chat-area">
+
+        <!-- Placeholder (quand aucun chat sélectionné) -->
+        <StackPane fx:id="chatPlaceholder" styleClass="chat-placeholder" VBox.vgrow="ALWAYS">
+            <VBox alignment="CENTER" spacing="12">
+                <Label text="💬" styleClass="placeholder-icon"/>
+                <Label text="Sélectionnez un membre" styleClass="placeholder-text"/>
+                <Label text="pour commencer une conversation" styleClass="placeholder-subtext"/>
+            </VBox>
+        </StackPane>
+
+        <!-- Zone chat active (cachée par défaut) -->
+        <VBox fx:id="chatActive" visible="false" managed="false" VBox.vgrow="ALWAYS">
+
+            <!-- Header chat -->
+            <HBox styleClass="chat-header" alignment="CENTER_LEFT" spacing="12">
+                <StackPane>
+                    <Circle radius="20" fx:id="chatAvatarCircle"
+                            style="-fx-fill:#6C63FF;"/>
+                    <Label fx:id="chatAvatarLetter" text="A"
+                           style="-fx-text-fill:white; -fx-font-weight:bold; -fx-font-size:16px;"/>
+                </StackPane>
+                <VBox spacing="2">
+                    <Label fx:id="chatHeaderName" text="" styleClass="chat-header-name"/>
+                    <HBox alignment="CENTER_LEFT" spacing="5">
+                        <Circle fx:id="chatHeaderStatusDot" radius="4" styleClass="status-dot-online"/>
+                        <Label fx:id="chatHeaderStatus" text="En ligne" styleClass="chat-header-status"
+                               style="-fx-text-fill:#4CAF50;"/>
+                    </HBox>
+                </VBox>
+            </HBox>
+
+            <!-- Messages -->
+            <ScrollPane fx:id="messagesScroll"
+                        styleClass="messages-scroll"
+                        VBox.vgrow="ALWAYS"
+                        fitToWidth="true"
+                        hbarPolicy="NEVER">
+                <VBox fx:id="messagesContainer" styleClass="messages-container" fillWidth="true"/>
+            </ScrollPane>
+
+            <!-- Zone de saisie -->
+            <HBox styleClass="input-area" alignment="CENTER" spacing="10">
+                <TextField fx:id="messageInput"
+                           promptText="Écrire un message..."
+                           styleClass="input-field"
+                           HBox.hgrow="ALWAYS"
+                           onAction="#handleSendMessage"/>
+                <Button text="➤" styleClass="btn-send"
+                        onAction="#handleSendMessage"/>
+            </HBox>
+
+        </VBox>
+    </VBox>
+
+</HBox>
