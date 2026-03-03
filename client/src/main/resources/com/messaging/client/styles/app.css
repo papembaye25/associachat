@@ -1,4 +1,4 @@
-/* ===== VARIABLES GLOBALES ===== */
+
 .root {
     -fx-font-family: 'Segoe UI', Arial, sans-serif;
     -primary: #6C63FF;
@@ -20,7 +20,7 @@
     -fx-background-color: #1A1A2E;
 }
 
-/* ===== LOGIN SCREEN ===== */
+
 .login-root {
     -fx-background-color: #1A1A2E;
 }
@@ -47,7 +47,7 @@
     -fx-font-size: 48px;
 }
 
-/* ===== CHAMPS DE SAISIE ===== */
+
 .text-field-dark, .password-field-dark, .combo-box-dark {
     -fx-background-color: #0F3460;
     -fx-text-fill: #FFFFFF;
@@ -66,7 +66,7 @@
     -fx-effect: dropshadow(gaussian, rgba(108,99,255,0.3), 10, 0, 0, 0);
 }
 
-/* ===== COMBO BOX ===== */
+
 .combo-box-dark {
     -fx-background-color: #0F3460;
 }
@@ -84,7 +84,7 @@
     -fx-background-color: #A0A0B0;
 }
 
-/* ===== BOUTONS ===== */
+
 .btn-primary {
     -fx-background-color: linear-gradient(to right, #6C63FF, #4B44CC);
     -fx-text-fill: #FFFFFF;
@@ -137,7 +137,7 @@
     -fx-background-color: linear-gradient(to bottom right, #7D75FF, #5C55DD);
 }
 
-/* ===== LABELS ERREUR/SUCCESS ===== */
+
 .label-error {
     -fx-text-fill: #FF5252;
     -fx-font-size: 12px;
@@ -154,7 +154,7 @@
     -fx-font-weight: bold;
 }
 
-/* ===== CHAT SCREEN - SIDEBAR ===== */
+
 .sidebar {
     -fx-background-color: #16213E;
     -fx-pref-width: 280px;
@@ -190,7 +190,7 @@
     -fx-padding: 10 15 5 15;
 }
 
-/* ===== LISTE DES MEMBRES ===== */
+
 .members-list {
     -fx-background-color: transparent;
     -fx-padding: 5;
@@ -253,7 +253,7 @@
     -fx-text-fill: white;
 }
 
-/* ===== ZONE CHAT PRINCIPALE ===== */
+
 .chat-area {
     -fx-background-color: #1A1A2E;
 }
@@ -275,7 +275,7 @@
     -fx-font-size: 12px;
 }
 
-/* ===== MESSAGES ===== */
+
 .messages-scroll {
     -fx-background-color: transparent;
     -fx-background: transparent;
@@ -300,7 +300,7 @@
     -fx-spacing: 8;
 }
 
-/* Bulle message envoyé */
+
 .bubble-sent {
     -fx-background-color: linear-gradient(to bottom right, #6C63FF, #4B44CC);
     -fx-background-radius: 18 18 4 18;
@@ -315,7 +315,7 @@
     -fx-wrap-text: true;
 }
 
-/* Bulle message reçu */
+
 .bubble-received {
     -fx-background-color: #16213E;
     -fx-background-radius: 18 18 18 4;
@@ -342,7 +342,7 @@
     -fx-font-size: 10px;
 }
 
-/* ===== ZONE DE SAISIE ===== */
+
 .input-area {
     -fx-background-color: #16213E;
     -fx-padding: 15 20 15 20;
@@ -367,7 +367,7 @@
     -fx-border-color: #6C63FF;
 }
 
-/* ===== PLACEHOLDER CHAT ===== */
+
 .chat-placeholder {
     -fx-background-color: #1A1A2E;
     -fx-alignment: center;
@@ -388,7 +388,7 @@
     -fx-font-size: 13px;
 }
 
-/* ===== SCROLLBAR GLOBALE ===== */
+
 .scroll-bar:vertical {
     -fx-background-color: transparent;
     -fx-pref-width: 6px;
@@ -409,12 +409,12 @@
     -fx-pref-height: 0;
 }
 
-/* ===== SÉPARATEUR ===== */
+
 .separator-dark {
     -fx-background-color: #2D2D5A;
 }
 
-/* ===== BADGE RÔLE ===== */
+
 .badge-organisateur {
     -fx-background-color: rgba(108,99,255,0.3);
     -fx-text-fill: #6C63FF;

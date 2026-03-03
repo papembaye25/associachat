@@ -11,7 +11,6 @@
       styleClass="main-container"
       prefWidth="950" prefHeight="680">
 
-    <!-- ===== SIDEBAR GAUCHE ===== -->
     <VBox styleClass="sidebar" spacing="0">
 
         <!-- Header sidebar -->
@@ -33,7 +32,7 @@
             </HBox>
         </VBox>
 
-        <!-- Section membres en ligne -->
+
         <Label text="EN LIGNE" styleClass="section-label"/>
 
         <!-- Liste membres -->
@@ -41,7 +40,7 @@
                   styleClass="members-list"
                   VBox.vgrow="ALWAYS"/>
 
-        <!-- Bouton déconnexion -->
+
         <VBox style="-fx-padding:10 15 15 15;" spacing="8">
             <Button fx:id="btnAllMembers"
                     text="👥  Tous les membres"
@@ -58,10 +57,9 @@
 
     </VBox>
 
-    <!-- ===== ZONE CHAT DROITE ===== -->
     <VBox VBox.vgrow="ALWAYS" HBox.hgrow="ALWAYS" styleClass="chat-area">
 
-        <!-- Placeholder (quand aucun chat sélectionné) -->
+
         <StackPane fx:id="chatPlaceholder" styleClass="chat-placeholder" VBox.vgrow="ALWAYS">
             <VBox alignment="CENTER" spacing="12">
                 <Label text="💬" styleClass="placeholder-icon"/>
@@ -70,10 +68,9 @@
             </VBox>
         </StackPane>
 
-        <!-- Zone chat active (cachée par défaut) -->
         <VBox fx:id="chatActive" visible="false" managed="false" VBox.vgrow="ALWAYS">
 
-            <!-- Header chat -->
+
             <HBox styleClass="chat-header" alignment="CENTER_LEFT" spacing="12">
                 <StackPane>
                     <Circle radius="20" fx:id="chatAvatarCircle"
@@ -100,7 +97,7 @@
                 <VBox fx:id="messagesContainer" styleClass="messages-container" fillWidth="true"/>
             </ScrollPane>
 
-            <!-- Zone de saisie -->
+
             <HBox styleClass="input-area" alignment="CENTER" spacing="10">
                 <TextField fx:id="messageInput"
                            promptText="Écrire un message..."

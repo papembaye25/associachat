@@ -11,7 +11,7 @@
            stylesheets="@../styles/app.css"
            prefWidth="500" prefHeight="680">
 
-    <!-- Cercles décoratifs en arrière-plan -->
+
     <Circle radius="200" fill="#6C63FF" opacity="0.05"
             translateX="-150" translateY="-200"/>
     <Circle radius="150" fill="#4B44CC" opacity="0.05"
@@ -19,10 +19,9 @@
 
     <VBox alignment="CENTER" spacing="0">
 
-        <!-- Carte principale -->
         <VBox styleClass="login-card" alignment="CENTER" spacing="22" maxWidth="420">
 
-            <!-- Logo animé -->
+
             <StackPane>
                 <Circle radius="40"
                         style="-fx-fill: linear-gradient(to bottom right, #6C63FF, #4B44CC);
@@ -36,7 +35,7 @@
                 <Label text="Messagerie pour Associations" styleClass="login-subtitle"/>
             </VBox>
 
-            <!-- Onglets -->
+
             <HBox alignment="CENTER" spacing="0"
                   style="-fx-background-color:#0F3460; -fx-background-radius:12; -fx-padding: 4;">
                 <Button fx:id="btnTabLogin" text="🔑  Connexion"
@@ -79,7 +78,7 @@
                         defaultButton="true"/>
             </VBox>
 
-            <!-- Formulaire REGISTER -->
+            <!-- Formulaire INSCRIPTIONN -->
             <VBox fx:id="registerForm" spacing="15" fillWidth="true"
                   visible="false" managed="false">
 

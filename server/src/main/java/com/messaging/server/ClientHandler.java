@@ -88,10 +88,9 @@ public class ClientHandler implements Runnable {
             response.put("role", user.getRole().name());
             sendPacket(response);
 
-            // Livrer messages en attente (RG6)
             deliverPendingMessages();
 
-            // Notifier les autres (RG4)
+
             server.broadcast(username, PacketType.USER_CONNECTED, "username", username);
             logger.info("Connexion : " + username); // RG12
 
@@ -122,7 +121,7 @@ public class ClientHandler implements Runnable {
         try {
             Message msg = messageService.sendMessage(username, receiver, contenu);
 
-            // Si destinataire connecté → livraison immédiate
+
             ClientHandler receiverHandler = server.getClient(receiver);
             if (receiverHandler != null) {
                 Packet delivery = new Packet(PacketType.RECEIVE_MESSAGE);

@@ -93,7 +93,7 @@ public class LoginController implements Initializable {
             }
         }
 
-        // Écouter la réponse
+
         connection.setPacketListener(packet -> {
             Platform.runLater(() -> handleLoginResponse(packet, username));
         });

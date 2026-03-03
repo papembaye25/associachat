@@ -13,7 +13,7 @@ public class ServerMain {
     private static final Logger logger = Logger.getLogger(ServerMain.class.getName());
     private static final int PORT = 5000;
 
-    // Map des clients connectés (RG3, RG11)
+
     private final ConcurrentHashMap<String, ClientHandler> connectedClients
             = new ConcurrentHashMap<>();
 
@@ -41,7 +41,6 @@ public class ServerMain {
         }
     }
 
-    // Diffuser un événement à tous sauf l'expéditeur
     public void broadcast(String excludeUsername, PacketType type,
                           String key, String value) {
         connectedClients.forEach((username, handler) -> {

@@ -31,7 +31,7 @@ public class ServerConnection {
         }
     }
 
-    // Écoute les paquets entrants dans un thread séparé
+
     private void startListening() {
         Thread listener = new Thread(() -> {
             try {

@@ -72,13 +72,12 @@ public class ChatController implements Initializable {
                         ? item.replaceAll(".*\\((.*)\\).*", "$1")
                         : "";
 
-                // Couleur avatar selon la première lettre
+
                 String[] colors = {"#6C63FF", "#FF6584", "#43B89C", "#FF9800",
                         "#2196F3", "#9C27B0", "#F44336", "#009688"};
                 int colorIndex = Math.abs(name.charAt(0)) % colors.length;
                 String avatarColor = colors[colorIndex];
 
-                // Avatar cercle avec initiale
                 javafx.scene.layout.StackPane avatar = new javafx.scene.layout.StackPane();
                 javafx.scene.shape.Circle circle = new javafx.scene.shape.Circle(18);
                 circle.setFill(Color.web(avatarColor));
@@ -94,12 +93,11 @@ public class ChatController implements Initializable {
                 roleLabel.setStyle("-fx-text-fill: #6C63FF; -fx-font-size: 10px; -fx-font-weight: bold;");
                 info.getChildren().addAll(nameLabel, roleLabel);
 
-                // Point statut
+
                 javafx.scene.shape.Circle statusDot = new javafx.scene.shape.Circle(4);
                 statusDot.setFill(Color.web("#4CAF50"));
                 statusDot.setStyle("-fx-effect: dropshadow(gaussian, #4CAF50, 6, 0.5, 0, 0);");
 
-                // Ligne complète
                 HBox cell = new HBox(10);
                 cell.setAlignment(Pos.CENTER_LEFT);
                 cell.setPadding(new Insets(8, 10, 8, 10));
@@ -250,7 +248,6 @@ public class ChatController implements Initializable {
         }
     }
 
-    // ✅ Méthode utilitaire pour extraire le nom depuis "pape mbaye (MEMBRE)"
     private String extractName(String memberEntry) {
         return memberEntry.contains("(")
                 ? memberEntry.substring(0, memberEntry.lastIndexOf("(")).trim()
@@ -308,7 +305,7 @@ public class ChatController implements Initializable {
             // Conversation déjà ouverte → afficher directement
             addMessageBubble(contenu, false, time);
         } else {
-            // ✅ CORRECTION : utiliser extractName pour comparer correctement
+
             for (String item : membersList.getItems()) {
                 String itemName = extractName(item);
                 if (itemName.equals(sender)) {
@@ -399,7 +396,7 @@ public class ChatController implements Initializable {
 
         messagesContainer.getChildren().add(row);
 
-        // Animation fade + slide
+
         javafx.animation.FadeTransition fade =
                 new javafx.animation.FadeTransition(
                         javafx.util.Duration.millis(200), bubble);
